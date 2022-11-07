@@ -4,21 +4,17 @@
 
 <body>
     <div>
-        <table class="table">
-            <tr class="bg-primary">
-                {% for col in nomicolonne %}
-                    <th>{{col}}</th>
-                {% endfor %}
-            </tr> <br>
-            {% for record in dati %}
-                <tr>
-                    {% for index in range(nomicolonne|length) %}
-                        <td>
-                            {{record[index]}}
-                        </td>
-                    {% endfor %}
-                </tr> <br>
-            {% endfor %}
-        </table>
-    </div>
+                    <!-- tabella in verticale -->
+                    <table class="table">
+                        {% for record in dati%}
+                            {% for index in range(nomicolonne|length)%}
+                            <tr>
+                                <td>{{nomicolonne[index]}}</td>
+                                <td>{{record[index]}}</td>
+                            </tr>
+                            {% endfor %}
+                        {% endfor %}
+                    </table>
+                </div>
+        
 </body>
